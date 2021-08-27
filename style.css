@@ -1,0 +1,217 @@
+:root {
+  /* Color */
+  --black-color: black;
+  --white-color: white;
+  --whitesmoke-color: whitesmoke;
+  --blue-color: #2196f3;
+  --red-color: red;
+  --gray-dark-color: #9e9e9e;
+  --gray-light-color: #cfcfcf;
+  /* Size */
+  --padding: 12px;
+  --margin: 16px;
+  --avatar-size: 36px;
+  /* Font-size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+  --icon-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* header */
+.header {
+  color: var(--whitesmoke-color);
+  background-color: var(--black-color);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+}
+.header .logo {
+  color: var(--red-color);
+  font-size: var(--font-large);
+}
+.header span {
+  color: var(--whitesmoke-color);
+}
+.header-icons {
+  display: flex;
+  justify-content: space-around;
+}
+.header-icons .fa-search {
+  margin-right: var(--padding);
+}
+
+/* video */
+.player {
+  text-align: center;
+  background-color: var(--black-color);
+  position: sticky;
+  top: 0px;
+}
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+}
+
+/* info */
+body > .info {
+  padding: var(--padding);
+}
+.info .metadata .hashtags {
+  color: var(--blue-color);
+  display: flex;
+  font-size: var(--font-small);
+}
+.info .metadata .hashtags li {
+  margin-left: var(--margin);
+}
+.info .metadata .titleAndButton {
+  display: flex;
+  justify-content: space-between;
+}
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-right: var(--margin);
+}
+.info .metadata .titleAndButton .moreBtn {
+  font-size: var(--font-large);
+  background-color: var(--white-color);
+  height: 100%;
+}
+.info .metadata .views {
+  color: var(--gray-dark-color);
+  font-size: var(--font-small);
+}
+
+/* action */
+.info .action {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--margin) 0;
+}
+.info .action li button {
+  background-color: var(--white-color);
+  color: var(--gray-dark-color);
+  font-size: var(--font-large);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info .action li button i {
+  margin-bottom: var(--margin);
+  font-size: var(--icon-size);
+}
+
+/* channel */
+.info .channel {
+  margin: var(--margin) 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--gray-light-color);
+  border-bottom: 1px solid var(--gray-light-color);
+}
+.info .channel .metadata {
+  display: flex;
+  align-items: center;
+}
+.info .channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.info .channel .metadata .info .subscribers {
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
+}
+.info .channel .metadata img {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+}
+.info .channel .subscribe {
+  background-color: var(--white-color);
+  color: var(--red-color);
+  font-size: var(--font-medium);
+  text-transform: uppercase;
+}
+
+/* UpNext */
+.UpNext {
+  padding: 0 var(--padding);
+}
+.UpNext > span {
+  color: var(--gray-dark-color);
+}
+.UpNext .item {
+  display: flex;
+  margin-top: var(--margin);
+}
+.UpNext .item .img {
+  flex: 1 1 35%;
+  margin-right: var(--margin);
+}
+.UpNext .item .img img {
+  width: 100%;
+}
+.UpNext .item .info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 60%;
+}
+.UpNext .item .info .title {
+  font-size: var(--font-large);
+}
+.UpNext .item .info .name,
+.UpNext .item .info .views {
+  font-size: var(--font-small);
+  color: var(--gray-dark-color);
+}
+.UpNext .item .moreBtn {
+  background-color: var(--white-color);
+  font-size: var(--icon-size);
+  height: 100%;
+  flex: 1 1 5%;
+}
+
+.infoAndUpNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .infoAndUpNext {
+    flex-direction: row;
+    width: 100%;
+    margin: var(--margin);
+  }
+  .infoAndUpNext .info {
+    flex: 1 1 40%;
+  }
+  .infoAndUpNext .UpNext {
+    flex: 1 1 60%;
+  }
+}
